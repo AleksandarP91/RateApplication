@@ -1,0 +1,50 @@
+﻿<div class="row">
+    <br />
+    <h4 class="col-lg-offset-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SKILLS</h4>
+    <div ng-app="RateApp" ng-controller="RateCtrl">
+
+        <div class="col-xs-9 col-lg-offset-1 input-group">
+            <div class="col-xs-3">
+                <input class="form-control" ng-model="skillName" type="text" placeholder="Add Skill" />
+            </div>
+            <div class="col-xs-6" ng-init="skillLevel = 3">
+                <label class="btn btn-default" ng-model="skillLevel" uib-btn-radio="0">0</label>
+                <label class="btn btn-default" ng-model="skillLevel" uib-btn-radio="1">1</label>
+                <label class="btn btn-default" ng-model="skillLevel" uib-btn-radio="2">2</label>
+                <label class="btn btn-default" ng-model="skillLevel" uib-btn-radio="3">3</label>
+                <label class="btn btn-default" ng-model="skillLevel" uib-btn-radio="4">4</label>
+                <label class="btn btn-default" ng-model="skillLevel" uib-btn-radio="5">5</label>
+            </div>
+
+            <span class="input-group-btn">
+                <input class="btn btn-success" type="button" ng-click="addSkill()" value="Add Skill" />
+            </span>
+
+
+        </div>
+        <div class="col-xs-9 col-lg-offset-1 input-group">
+
+            <hr />
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="skill in skills">
+                    <div class="col-lg-5">{{skill.Name}}</div>
+                    <span class="col-lg-offset-3" ng-init="modifiedLevel = skill.Level">
+
+                        <label class="btn btn-default" ng-model="modifiedLevel" ng-click="changeLevel(skill, modifiedLevel)" uib-btn-radio="0">0</label>
+                        <label class="btn btn-default" ng-model="modifiedLevel" ng-click="changeLevel(skill, modifiedLevel)" uib-btn-radio="1">1</label>
+                        <label class="btn btn-default" ng-model="modifiedLevel" ng-click="changeLevel(skill, modifiedLevel)" uib-btn-radio="2">2</label>
+                        <label class="btn btn-default" ng-model="modifiedLevel" ng-click="changeLevel(skill, modifiedLevel)" uib-btn-radio="3">3</label>
+                        <label class="btn btn-default" ng-model="modifiedLevel" ng-click="changeLevel(skill, modifiedLevel)" uib-btn-radio="4">4</label>
+                        <label class="btn btn-default" ng-model="modifiedLevel" ng-click="changeLevel(skill, modifiedLevel)" uib-btn-radio="5">5</label>
+
+
+
+                        <button type="button" ng-click="delete(skill)" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
